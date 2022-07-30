@@ -1,7 +1,12 @@
 import discord
 from discord.ext import commands
 import random
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
 client = commands.Bot(command_prefix = '.')
 
 @client.event
@@ -56,4 +61,4 @@ async def unban(ctx, *, member):
 			await ctx.send(f'{user.name} have been unbanned from the server.')
 			return
 
-client.run('MTAwMDAzODY4OTI0MzY2ODYyMA.GDXrrR.pxABXtCL69LjKkrC8Pu8Sgo3WHpTxktGj9ccw8')
+client.run(TOKEN)
